@@ -28,6 +28,14 @@
   color: #61dafb;
 }
 
+.textflex{
+    margin:0 auto;
+    width:400px;
+    height:50px;
+    display: flex;
+    flex-direction: row;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

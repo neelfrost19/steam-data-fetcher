@@ -1,11 +1,20 @@
 import React from 'react';
 import './App.css';
-import DataFetcher from './DataFetcher.js'
+import Navbar from './component/Navbar.js'
+import AcctHolder from './component/AcctHolder.js';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+import Home from './Home.js'
 
 function App() {
   return (
     <>
-    <DataFetcher/>
+        <Router>
+            <Navbar/>
+            <AcctHolder/>
+            <Routes>
+                <Route path='/' exact element={<Home/>} />
+            </Routes>
+        </Router>
     </>
   );
 }

@@ -1,0 +1,40 @@
+.textflex {
+    text-align:center;
+}
+
+.headerE{
+    color: white;
+    padding-bottom:10px;
+}
+
+.inputT {
+  background-color: transparent;
+  color: #fff;
+  padding: 8px 20px;
+  border: 1px solid var(--primary);
+  transition: all 0.3s ease-out;
+  Height:51px;
+}
+
+.textC {
+    text-align:center;
+}
+
+.dataList {
+  font-family: 'opensans-regular', sans-serif;
+  font-weight: normal;
+  line-height: 30px;
+  color: #262626;
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-gap: 1px;
+  list-style: none;
+  text-align: left;
+  width: 90vw;
+  justify-content: start;
+  margin-right: 1rem;
+  padding:10px;
+  background: linear-gradient(90deg, rgba(201, 190, 183, 80) 0%, rgba(203, 245, 230, 0) 100%);
+  border-radius:15px
+}
+

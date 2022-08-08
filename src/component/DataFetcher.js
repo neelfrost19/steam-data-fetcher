@@ -3,6 +3,7 @@ import { db } from "../firebase-config";
 import axios from "axios";
 import { Button } from './Button';
 import "./DataFetcher.css";
+import data from "../env.json"
 import {
   collection,
   getDocs,
@@ -20,8 +21,8 @@ function DataFetcher({Id, showData, game}) {
   const [steamData, setSteamData] = useState([]);
   const [boxDis, setBoxDis] = useState(!showData);
 
-  const csgo_url = process.env.REACT_APP_CSGO_API_URL;
-  const rust_url = process.env.REACT_APP_RUST_API_URL;
+  const csgo_url = data.main.REACT_APP_CSGO_API_URL;
+  const rust_url = data.main.REACT_APP_RUST_API_URL;
   const ucr = collection(db, "users");
 
   const close = () => {

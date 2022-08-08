@@ -4,10 +4,10 @@ import Backvideo from './component/backvideo.js';
 import Footer from './component/Footer.js';
 import DataFetcher from './component/DataFetcher.js'
 
-function Home() {
+function Home({Id, showData}) {
   return (
     <>
-      <Backvideo/>
+      <Backvideo Id={Id} showData={showData}/>
       <Footer/>
     </>
   );

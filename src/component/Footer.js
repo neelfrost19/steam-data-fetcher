@@ -13,9 +13,9 @@ function Footer() {
 
   return (
     <div className='footer-container'>
-      <div class='footer-links'>
+      <div className='footer-links'>
         <div className='footer-link-wrapper'>
-          <div class='footer-link-items'>
+          <div className='footer-link-items'>
             <h2>About Me</h2>
             <Link to='/'>Resume</Link>
             <Link
@@ -26,7 +26,7 @@ function Footer() {
             Youtube
             </Link>
           </div>
-          <div class='footer-link-items'>
+          <div className='footer-link-items'>
             <h2>Contact Me</h2>
             <Link to='/'
                   onClick={() =>
@@ -42,9 +42,9 @@ function Footer() {
           </div>
         </div>
       </div>
-      <section class='social-media'>
-        <div class='social-media-wrap'>
-          <div class='footer-logo'>
+      <section className='social-media'>
+        <div className='social-media-wrap'>
+          <div className='footer-logo'>
             <Link to='/' className='social-logo'>
               FROST
               <img
@@ -53,25 +53,25 @@ function Footer() {
             />
             </Link>
           </div>
-          <div class='social-icons'>
+          <div className='social-icons'>
             <Link
-              class='social-icon-link youtube'
+              className='social-icon-link youtube'
               to='/'
               onClick={() =>
                 openInNewTab('https://www.youtube.com/watch?v=yr7P8fyo6uU')}
               target='_blank'
               aria-label='Youtube'
             >
-              <i class='fab fa-youtube' />
+              <i className='fab fa-youtube' />
             </Link>
             <Link
-              class='social-icon-link twitter'
+              className='social-icon-link twitter'
               to='/'
               target='_blank'
               aria-label='LinkedIn'
             >
               <i
-              class='fab fa-linkedin'
+              className='fab fa-linkedin'
               onClick={() => openInNewTab('https://www.linkedin.com/in/neelesh-kumar-das-600549166/')}
               />
             </Link>

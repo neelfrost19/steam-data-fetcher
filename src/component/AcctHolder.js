@@ -11,10 +11,16 @@ import {
   doc,
 } from "firebase/firestore";
 
-function AcctHolder() {
+function AcctHolder({setId,setShowData}) {
 
     const [users, setUsers] = useState([]);
     const ucr = collection(db, "users");
+
+    const dataHandler =(value)=> {
+       setId(value);
+       setShowData(true);
+       console.log(value);
+    }
 
   useEffect(() => {
         const getUsers = async () => {
@@ -35,10 +41,13 @@ function AcctHolder() {
             {
             users?users.map((data)=>{
                 return(
-                    <li className='acctHolder-item'>
+                    <li
+                        className='acctHolder-item'
+                        onClick={()=>{
+                            dataHandler(data.player_id)
+                         }}>
                         <a
                             className='acctHolder-links'
-                            onClick={''}
                         >
                             {data.name}
                         </a>

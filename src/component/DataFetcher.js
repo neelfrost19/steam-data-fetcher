@@ -12,13 +12,13 @@ import {
   doc,
 } from "firebase/firestore";
 
-function DataFetcher(game) {
+function DataFetcher({Id, showData, game}) {
 
   const [newName, setNewName] = useState("");
   const [steamId, setSteamId] = useState("");
   const [users, setUsers] = useState([]);
   const [steamData, setSteamData] = useState([]);
-  const [boxDis, setBoxDis] = useState(false);
+  const [boxDis, setBoxDis] = useState(!showData);
 
   const csgo_url = process.env.REACT_APP_CSGO_API_URL;
   const rust_url = process.env.REACT_APP_RUST_API_URL;
@@ -89,7 +89,7 @@ function DataFetcher(game) {
 
   return (
     <div className="App">
-    <div class='dataBox'>
+    <div className='dataBox'>
     <div className="textflex">
      <h1 className='headerE'>Enter Your Steam ID</h1>
       <input

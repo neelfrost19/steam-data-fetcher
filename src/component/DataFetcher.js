@@ -13,23 +13,24 @@ import {
   doc,
 } from "firebase/firestore";
 
-function DataFetcher({Id, showData, game}) {
+function DataFetcher({Id, game}) {
 
   const [newName, setNewName] = useState("");
   const [steamId, setSteamId] = useState("");
   const [users, setUsers] = useState([]);
   const [steamData, setSteamData] = useState([]);
-  const [boxDis, setBoxDis] = useState(!showData);
+  const [boxShow, setBoxShow] = useState(false);
 
   const csgo_url = data.main.REACT_APP_CSGO_API_URL;
   const rust_url = data.main.REACT_APP_RUST_API_URL;
   const ucr = collection(db, "users");
 
   const close = () => {
-    setBoxDis(false);
+    setBoxShow(false);
   }
 
   const csgoDetail = async () => {
+      setBoxShow(true);
       axios.get(csgo_url+steamId)
           .then((res)=>{
           console.log(res?.data.playerstats.stats)
@@ -120,7 +121,7 @@ function DataFetcher({Id, showData, game}) {
             </Button>
        </div>
        <br/>
-       { boxDis && <div className='dataList'>
+       { boxShow && <div className='dataList'>
       {steamData.map((data)=>{
       if((data.name.includes("kills") && data.name.includes("total")) || data.name.includes("deaths"))
         {return(
@@ -131,15 +132,16 @@ function DataFetcher({Id, showData, game}) {
       })
       }
       </div>}
+      <br />
       <div className='textflex'>
-      <Button
+      {boxShow && <Button
         className='btns'
         style='btn--outline'
         size='btn--large'
         onClick={()=>close()}
         >
             close
-      </Button>
+      </Button>}
       </div>
       </div>
     </div>
